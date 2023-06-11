@@ -1,12 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
-
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
 
   const handleInputChange = (event) => {
     setTitle(event.target.value);
+  }
+
+  const handleOnSearch = () => {
+    if (title.length) {
+      navigate(`/search=${title}`, {replace: true});
+    }
   }
 
   return (
@@ -28,7 +34,9 @@ export default function Header() {
               placeholder="Search Movies"
               onChange={handleInputChange}
             />
-            <button className="bg-sky-500 px-5 py-2 text-sm font-medium rounded-md ml-3 capitalize text-white hover:bg-sky-700 active:bg-sky-500">
+            <button
+              onClick={handleOnSearch} 
+              className="bg-sky-500 px-5 py-2 text-sm font-medium rounded-md ml-3 capitalize text-white hover:bg-sky-700 active:bg-sky-500">
               search
             </button>
           </li>
