@@ -1,8 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import Header from "../components/Header";
 
 const App = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <>
+      <Header />
+      <main>
+        <h2>Home Page</h2>
+      </main>
+    </>
+  );
 };
 
 export default App;
