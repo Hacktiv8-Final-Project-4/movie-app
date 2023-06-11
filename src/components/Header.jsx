@@ -10,21 +10,27 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-slate-500">
-      <h1>Movie</h1>
+    <header 
+      className="flex items-center p-5 gap-x-5 border-b border-slate-200">
+      <h1 className="text-xl font-semibold">
+        Movie
+      </h1>
       <nav>
-        <ul>
-          <li>
+        <ul className="flex items-center gap-x-5">
+          <li className="text-slate-700 hover:text-sky-500 font-medium">
             <Link to="/">Home</Link>
           </li>
           <li>
             <input
+              className="text-slate-700 border border-slate-300 px-3 py-2 text-sm rounded-md focus:border-2 focus:border-sky-500 focus:outline-none"
               type="text"
               value={title}
-              placeholder="search movies"
+              placeholder="Search Movies"
               onChange={handleInputChange}
             />
-            <button>search</button>
+            <button className="bg-sky-500 px-5 py-2 text-sm font-medium rounded-md ml-3 capitalize text-white hover:bg-sky-700 active:bg-sky-500">
+              search
+            </button>
           </li>
         </ul>
       </nav>
