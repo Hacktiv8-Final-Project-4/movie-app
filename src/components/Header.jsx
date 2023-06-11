@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { searchMoviesByTitle } from "../features/searchSlice";
+import { useDispatch } from "react-redux";
 
 export default function Header() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [title, setTitle] = useState("");
 
   const handleInputChange = (event) => {
@@ -11,6 +14,7 @@ export default function Header() {
 
   const handleOnSearch = () => {
     if (title.length) {
+      dispatch(searchMoviesByTitle(title));
       navigate(`/search=${title}`, {replace: true});
     }
   }
