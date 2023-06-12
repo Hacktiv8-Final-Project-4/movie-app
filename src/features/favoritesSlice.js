@@ -3,7 +3,7 @@ import findMovie from "../utils/findMovie";
 import unmatchedMovies from "../utils/unmatchedMovies";
 
 const initialState = {
-  favorites: [],
+  favoriteMovies: [],
 }
 
 const favoritesSlice = createSlice({
@@ -13,16 +13,16 @@ const favoritesSlice = createSlice({
     addToFavorites: (state, action) => {
       const { movie } = action.payload;
 
-      const isMovieAxist = findMovie(state.favorites, movie.imdbID);
+      const isMovieAxist = findMovie(state.favoriteMovies, movie.imdbID);
 
       if (!isMovieAxist) {
-        state.favorites.push(movie);
+        state.favoriteMovies.push(movie);
       }
     },
     removeFromFavorites: (state, action) => {
       const { movieId } = action.payload;
 
-      state.favorites = unmatchedMovies(state.favorites, movieId);
+      state.favoriteMovies = unmatchedMovies(state.favoriteMovies, movieId);
     }
   }
 });

@@ -1,7 +1,42 @@
 /* eslint-disable react/prop-types */
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToFavorites, removeFromFavorites } from "../../features/favoritesSlice";
+import findMovie from "../../utils/findMovie";
 
 export default function CardItem({ movie }) {
+  const dispatch = useDispatch();
+  const { favoriteMovies } = useSelector((state) => state.favorites);
+
+  const handleFavoritesClick = (movie) => {
+    dispatch(addToFavorites({ movie }));
+  }
+
+  const handleUnFavoritesClick = (movieId) => {
+    dispatch(removeFromFavorites({ movieId }));
+  }
+
+  const isMovieExist = findMovie(favoriteMovies, movie.imdbID);
+
+  let favoriteButton;
+
+  if (isMovieExist) {
+    favoriteButton = (
+      <button
+        onClick={() => handleUnFavoritesClick(movie.imdbID)}
+        className="absolute top-3 right-3">
+        <i className="fa-solid fa-heart text-slate-300 text-xl"></i>
+      </button>
+    );
+  } else {
+    favoriteButton = (
+      <button
+        onClick={() => handleFavoritesClick(movie)}
+        className="absolute top-3 right-3">
+        <i className="fa-regular fa-heart text-slate-300 text-xl"></i>
+      </button>
+    );
+  }
   
   return (
     <div className="relative">
@@ -29,10 +64,7 @@ export default function CardItem({ movie }) {
           {movie.Year}
         </p>
       </div>
-      <button
-        className="absolute top-3 right-3">
-        <i className="fa-regular fa-heart text-slate-300 text-xl"></i>
-      </button>
+      {favoriteButton}
     </div>
   );
 }
