@@ -7,6 +7,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Search from "./pages/Search";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Favorites from "./pages/Favorites";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
   {
     path: ":searchParams",
     element: <Search />
-  }
+  },
+  {
+    path: "/favorites",
+    element: <Favorites />
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -6,8 +6,8 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
-        <h2>Home Page</h2>
+      <main className="w-full my-12 px-5 xl:max-w-6xl xl:mx-auto xl:px-0">
+        <h2 className="mb-5 text-xl capitalize font-medium">Home Page</h2>
       </main>
     </>
   );

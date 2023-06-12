@@ -30,6 +30,9 @@ export default function Header() {
           <li className="text-slate-700 hover:text-sky-500 font-medium">
             <Link to="/">Home</Link>
           </li>
+          <li className="text-slate-700 hover:text-sky-500 font-medium">
+            <Link to="/favorites">Favorites</Link>
+          </li>
           <li>
             <input
               className="text-slate-700 border border-slate-300 px-3 py-2 text-sm rounded-md focus:border-2 focus:border-sky-500 focus:outline-none"
