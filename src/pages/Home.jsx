@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { MainLayout, CardWrapper, Card } from "../components";
+
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovieList, getMovieList } from "../features/movieSlice";
 
-import { MainLayout, CardWrapper, Card } from "../components";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Controller } from "swiper";
+import "swiper/swiper.min.css";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,17 +20,29 @@ const Home = () => {
   return (
     <MainLayout>
       <h1 className="text-[36px] font-bold">New Arrival</h1>
-      <CardWrapper>
-        {movies.map((movie, idx) => (
-          <Link
-            to={`/movie-detail/${movie.imdbID}`}
-            key={idx}
-            className="w-[calc(25%_-_3rem)] relative"
-          >
-            <Card data={movie} key={idx} />
-          </Link>
-        ))}
-      </CardWrapper>
+      <Swiper spaceBetween={16} slidesPerView={4}>
+        <CardWrapper>
+          {movies.map((movie, idx) => (
+            <SwiperSlide key={idx}>
+              <Link to={`/movie-detail/${movie.imdbID}`} className="w-full">
+                <Card data={movie} />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </CardWrapper>
+      </Swiper>
+      <h1 className="text-[36px] font-bold">New Arrival</h1>
+      <Swiper spaceBetween={16} slidesPerView={4}>
+        <CardWrapper>
+          {movies.map((movie, idx) => (
+            <SwiperSlide key={idx}>
+              <Link to={`/movie-detail/${movie.imdbID}`} className="w-full">
+                <Card data={movie} />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </CardWrapper>
+      </Swiper>
     </MainLayout>
   );
 };
