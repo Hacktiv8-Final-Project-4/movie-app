@@ -5,15 +5,19 @@ export default function CardItem({ movie }) {
   
   return (
     <div className="relative">
-      <Link to="">
+      <div className="relative">
         <img
           className="h-[350px] w-full object-cover xl:h-[280px]"
           src={movie.Poster}
           alt={movie.Title}
         />
-      </Link>
+        <Link
+          to="" 
+          className="absolute block top-0 right-0 bottom-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-[rgba(0,0,0,0.1)]">
+        </Link>
+      </div>
       <span 
-        className="bg-[rgba(0,0,0,0.7)] px-2 py-1 text-xs rounded-md absolute top-3 left-3 font-medium text-white">
+        className="bg-yellow-500 px-2 py-1 text-xs rounded-md absolute top-3 left-3 font-medium text-slate-800">
         {movie.Type}
       </span>
       <div className="mt-3">
@@ -25,8 +29,9 @@ export default function CardItem({ movie }) {
           {movie.Year}
         </p>
       </div>
-      <button>
-        <i className="fa-regular fa-heart"></i>
+      <button
+        className="absolute top-3 right-3">
+        <i className="fa-regular fa-heart text-slate-300 text-xl"></i>
       </button>
     </div>
   );
