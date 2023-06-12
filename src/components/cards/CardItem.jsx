@@ -25,7 +25,9 @@ export default function CardItem({ movie }) {
           {movie.Year}
         </p>
       </div>
-      <i className="fa-solid fa-heart"></i>
+      <button>
+        <i className="fa-regular fa-heart"></i>
+      </button>
     </div>
   );
 }
