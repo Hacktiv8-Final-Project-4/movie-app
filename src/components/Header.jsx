@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header 
-      className="flex items-center p-5 gap-x-5 border-b border-slate-200">
+      className="flex items-center p-5 gap-x-5 border-b border-slate-200 xl:px-60">
       <h1 className="text-xl font-semibold">
         Movie
       </h1>
