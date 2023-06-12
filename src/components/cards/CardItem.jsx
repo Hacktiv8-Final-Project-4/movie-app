@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+
 export default function CardItem({ movie }) {
-  console.log(movie);
+  
   return (
     <div className="relative">
       <Link to="">
@@ -24,6 +25,7 @@ export default function CardItem({ movie }) {
           {movie.Year}
         </p>
       </div>
+      <i className="fa-solid fa-heart"></i>
     </div>
   );
 }

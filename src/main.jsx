@@ -6,6 +6,7 @@ import App from "./app/App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Search from "./pages/Search";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const router = createBrowserRouter([
   {
