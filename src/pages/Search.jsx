@@ -8,7 +8,7 @@ export default function Search() {
   const { searchParams } = useParams();
   const title = slicedParams(searchParams, 7, searchParams.length);
   
-  const movies = useSelector((state) => state.search);
+  const search = useSelector((state) => state.search);
 
   return (
     <>
@@ -17,8 +17,13 @@ export default function Search() {
         <h2 className="mb-5 text-xl capitalize font-medium">{title}</h2>
         <Cards
           className="grid grid-cols justify-center sm:grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5" 
-          movies={movies?.searchResults} 
+          movies={search?.searchResults} 
         />
+        {search.errorMessages && 
+          <p className="text-slate-500">
+            {search.errorMessages}
+          </p>
+        }
       </main>
     </>
   );

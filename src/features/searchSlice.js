@@ -5,6 +5,11 @@ import { searchMovies } from "../services/api";
 const searchMoviesByTitle = createAsyncThunk("movies/search", async (title) => {
   try {
     const response = await searchMovies(title);
+
+    if (response.data.Response === "False") {
+      throw(response.data.Error);
+    }
+    
     return response.data.Search;
     
   } catch(error) {
