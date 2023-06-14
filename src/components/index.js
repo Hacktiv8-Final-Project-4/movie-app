@@ -1,6 +1,10 @@
 import MainLayout from "./layouts/MainLayout";
-import CardWrapper from "./layouts/CardWrapper";
 
-import Card from "./cards";
+import Button from "./atoms/Button";
 
-export { MainLayout, CardWrapper, Card };
+import MovieCard from "./molecules/MovieCard";
+
+import MovieCarousel from "./organisms/MovieCarousel";
+import MovieList from "./organisms/MovieList";
+
+export { MainLayout, Button, MovieCard, MovieCarousel, MovieList };

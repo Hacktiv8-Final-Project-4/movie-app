@@ -1,7 +1,13 @@
 import React from "react";
 
 const MainLayout = ({ children }) => {
-  return <div className="container mx-auto py-5">{children}</div>;
+  return (
+    <div>
+      <header>ini header</header>
+      <main>{children}</main>
+      <footer>ini footer</footer>
+    </div>
+  );
 };
 
 export default MainLayout;
