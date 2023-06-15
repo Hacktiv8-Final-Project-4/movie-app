@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import slicedParams from "../../utils/slicedParams";
 import Cards from "../../components/Cards";
 import DefaultCarousel from "../../components/Carousel";
+import Layout from "../../components/Layout";
 
 export default function Search() {
   const { searchParams } = useParams();
@@ -12,7 +13,7 @@ export default function Search() {
   const search = useSelector((state) => state.search);
 
   return (
-    <>
+    <Layout>
       <Header />
       <DefaultCarousel />
       <main className="w-full my-12 px-5 xl:max-w-6xl xl:mx-auto xl:px-0">
@@ -27,6 +28,6 @@ export default function Search() {
           </p>
         }
       </main>
-    </>
+    </Layout>
   );
 }

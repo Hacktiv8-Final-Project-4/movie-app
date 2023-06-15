@@ -3,14 +3,13 @@ import Header from "../../components/Header";
 import Cards from "../../components/Cards";
 import EmptyDataMessages from "../../components/Messages";
 import DefaultCarousel from "../../components/Carousel";
+import Layout from "../../components/Layout";
 
 export default function Favorites() {
   const { favoriteMovies } = useSelector((state) => state.favorites)
 
   return (
-    <>
-      <Header />
-      <DefaultCarousel />
+    <Layout>
       <main className="w-full my-12 px-5 xl:max-w-6xl xl:mx-auto xl:px-0">
         <h2 className="mb-5 text-xl capitalize font-medium">Favorites Movies</h2>
         {favoriteMovies.length ?
@@ -21,6 +20,6 @@ export default function Favorites() {
           <EmptyDataMessages />
         }
       </main>
-    </>
+    </Layout>
   );
 }
