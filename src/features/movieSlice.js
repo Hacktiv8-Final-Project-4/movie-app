@@ -7,6 +7,7 @@ export const fetchMovieList = createAsyncThunk(
   async () => {
     try {
       const response = await getMovies();
+      // console.log(response.data.Search);
       return response.data.Search;
     } catch (error) {
       throw error;
@@ -27,7 +28,6 @@ const movieSlice = createSlice({
     builder
       .addCase(fetchMovieList.pending, (state) => {
         state.isLoading = true;
-        state.isLoading = false;
       })
       .addCase(fetchMovieList.fulfilled, (state, action) => {
         state.isLoading = false;

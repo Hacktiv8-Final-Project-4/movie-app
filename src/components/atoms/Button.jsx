@@ -2,7 +2,7 @@ import Icon from "./Icon";
 
 const Button = ({ onClick, className, children }) => {
   return (
-    <button className={`btn ${className}`} onClick={onClick}>
+    <button className={`${className}`} onClick={onClick}>
       {children}
     </button>
   );

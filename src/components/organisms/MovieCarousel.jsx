@@ -14,14 +14,16 @@ SwiperCore.use([Navigation]);
 const MovieCarousel = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchMovieList());
-  }, [dispatch]);
-
   const movies = useSelector(getMovieList);
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchMovieList());
+  }, [dispatch]);
+
+  console.log(movies);
 
   const slideToPrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -63,9 +65,9 @@ const MovieCarousel = () => {
             },
           }}
         >
-          {movies.map((movie, idx) => (
+          {movies?.map((movie, idx) => (
             <SwiperSlide key={idx}>
-              <MovieCard movie={movie} />
+              {movie && <MovieCard data={movie} />}
             </SwiperSlide>
           ))}
         </Swiper>
