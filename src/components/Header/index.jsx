@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { searchMoviesByTitle } from "../../features/searchSlice";
 import { useDispatch } from "react-redux";
 
@@ -26,19 +26,26 @@ const Header = () => {
   return (
     <header>
       <nav className="border-gray-200 dark:bg-gray-900 fixed z-50 top-0 left-0 right-0">
-        <div className="max-w-screen-xl flex items-center mx-auto p-4 gap-x-10">
-          <Link to="/" 
+        <div className="max-w-screen-xl xl:max-w-6xl flex items-center mx-auto p-4 xl:px-0 gap-x-10">
+          <NavLink to="/" 
             className="w-max text-2xl font-semibold text-white flex items-center gap-x-3">
             <i className="fa-solid fa-circle-play text-yellow-500"></i>
-            <span className="-mt-1">Movie</span>
-          </Link>
+            <span className="-mt-1">Movlix</span>
+          </NavLink>
           {/* search */}
           <ul className="w-full flex items-center gap-x-5">
-            <li className="w-max text-white font-medium">
-              <Link to="/">Home</Link>
+            <li className="w-max font-medium">
+            <NavLink 
+              to="/" 
+              className={({isActive}) => isActive ? "text-yellow-500" : "text-white"}>
+              Home
+            </NavLink>
             </li>
-            <li className="w-max text-white font-medium">
-              <Link to="/favorites">Favorites</Link>
+            <li className="w-max font-medium">
+            <NavLink to="/favorites"
+              className={({isActive}) => isActive ? "text-yellow-500" : "text-white"}>
+              Favorites
+            </NavLink>
             </li>
             <li className="w-full flex justify-end">
               <div className="flex md:order-2">

@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 const App = () => {
   return (
     <Layout>
-      <main className="w-full my-12 px-5 xl:max-w-6xl xl:mx-auto xl:px-0 h-screen">
+      <main className="w-full my-20 px-5 xl:max-w-6xl xl:mx-auto xl:px-0 h-screen">
         <h2 className="mb-5 text-xl capitalize font-medium">Home Page</h2>
       </main>
     </Layout>

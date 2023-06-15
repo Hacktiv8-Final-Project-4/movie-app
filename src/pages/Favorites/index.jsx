@@ -8,7 +8,7 @@ export default function Favorites() {
 
   return (
     <Layout>
-      <main className="w-full my-12 px-5 xl:max-w-6xl xl:mx-auto xl:px-0">
+      <main className="w-full my-20 px-5 xl:max-w-6xl xl:mx-auto xl:px-0">
         <h2 className="mb-5 text-xl capitalize font-medium">Favorites Movies</h2>
         {favoriteMovies.length ?
           <Cards
