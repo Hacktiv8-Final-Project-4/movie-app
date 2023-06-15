@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
-import Header from "../components/Header";
+import Header from "../components/header";
 import Cards from "../components/cards/Cards";
 import EmptyDataMessages from "../components/messages/EmptyDataMessages";
+import DefaultCarousel from "../components/carousel";
 
 export default function Favorites() {
   const { favoriteMovies } = useSelector((state) => state.favorites)
@@ -9,6 +10,7 @@ export default function Favorites() {
   return (
     <>
       <Header />
+      <DefaultCarousel />
       <main className="w-full my-12 px-5 xl:max-w-6xl xl:mx-auto xl:px-0">
         <h2 className="mb-5 text-xl capitalize font-medium">Favorites Movies</h2>
         {favoriteMovies.length ?
