@@ -6,8 +6,9 @@ function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex justify-center">
           <div className="flex flex-wrap items-center text-center gap-x-5">
-            <div className="w-full sm:w-1/2 md:w-auto mb-4 sm:mb-0">
-              <h3 className="text-lg font-semibold">Movie</h3>
+            <div className="w-full sm:w-1/2 md:w-auto mb-4 sm:mb-0 flex items-center gap-x-2 text-lg">
+              <i className="fa-solid fa-circle-play text-yellow-500"></i>
+              <h3 className="font-semibold">Movie</h3>
             </div>
             <div className="w-full sm:w-1/2 md:w-auto">
               <ul className="flex justify-center sm:justify-end">

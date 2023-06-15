@@ -28,8 +28,9 @@ const Header = () => {
       <nav className="border-gray-200 dark:bg-gray-900 fixed z-50 top-0 left-0 right-0">
         <div className="max-w-screen-xl flex items-center mx-auto p-4 gap-x-10">
           <Link to="/" 
-            className="w-max text-2xl font-semibold text-white">
-            Movie
+            className="w-max text-2xl font-semibold text-white flex items-center gap-x-3">
+            <i className="fa-solid fa-circle-play text-yellow-500"></i>
+            <span className="-mt-1">Movie</span>
           </Link>
           {/* search */}
           <ul className="w-full flex items-center gap-x-5">

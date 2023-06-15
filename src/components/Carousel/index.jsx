@@ -72,14 +72,17 @@ const DefaultCarousel = () => {
           {/* <!-- Item 1 --> */}
         <div className="duration-700 ease-in-out" data-carousel-item>
           <img src="/images/carousel/star-wars-7b-edit.jpeg" className="absolute w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+          <span className="block absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.1)]"></span>
         </div>
         {/* <!-- Item 2 --> */}
         <div className="duration-700 ease-in-out" data-carousel-item>
           <img src="/images/carousel/20230615_012838.jpg" className="absolute w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+          <span className="block absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.1)]"></span>
         </div>
         {/* <!-- Item 3 --> */}
         <div className="duration-700 ease-in-out" data-carousel-item>
           <img src="/images/carousel/rise-of-skywalker-poster.jpeg" className="absolute w-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+          <span className="block absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.1)]"></span>
         </div>
       </div>
     
