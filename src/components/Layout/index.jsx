@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import DefaultCarousel from "../Carousel"
+import Footer from "../Footer";
 import Header from "../Header"
 
 export default function Layout({ children }) {
@@ -8,6 +9,7 @@ export default function Layout({ children }) {
       <Header />
       <DefaultCarousel />
       {children}
+      <Footer />
     </>
   );
 }

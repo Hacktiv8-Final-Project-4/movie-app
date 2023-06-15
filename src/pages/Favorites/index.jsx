@@ -1,8 +1,6 @@
 import { useSelector } from "react-redux";
-import Header from "../../components/Header";
 import Cards from "../../components/Cards";
 import EmptyDataMessages from "../../components/Messages";
-import DefaultCarousel from "../../components/Carousel";
 import Layout from "../../components/Layout";
 
 export default function Favorites() {

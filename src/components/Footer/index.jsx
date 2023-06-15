@@ -1,0 +1,45 @@
+import { Link } from 'react-router-dom';
+
+function Footer() {
+  return (
+    <footer className="bg-gray-900 text-gray-400 py-6">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-center">
+          <div className="flex flex-wrap items-center text-center gap-x-5">
+            <div className="w-full sm:w-1/2 md:w-auto mb-4 sm:mb-0">
+              <h3 className="text-lg font-semibold">Movie</h3>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-auto">
+              <ul className="flex justify-center sm:justify-end">
+                <li className="mr-4">
+                  <Link to="/" className="text-gray-400 hover:text-white">Home</Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/favorites" className="text-gray-400 hover:text-white">Favorites</Link>
+                </li>
+                <li className="mr-4">
+                  <Link to="#" className="text-gray-400 hover:text-white">About</Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">Contact</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="mt-4">
+          <p className="text-center text-gray-400">
+            &copy; {new Date().getFullYear()} Movie. All rights reserved.
+          </p>
+        </div>
+        <div className="mt-4">
+          <p className="text-center text-gray-400">
+            Powered by <a href="http://www.omdbapi.com/" className="text-gray-400 hover:text-white">OMDB API</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;

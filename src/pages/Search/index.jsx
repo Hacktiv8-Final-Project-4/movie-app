@@ -1,9 +1,7 @@
 import { useSelector } from "react-redux";
-import Header from "../../components/Header";
 import { useParams } from "react-router-dom";
 import slicedParams from "../../utils/slicedParams";
 import Cards from "../../components/Cards";
-import DefaultCarousel from "../../components/Carousel";
 import Layout from "../../components/Layout";
 
 export default function Search() {
@@ -14,8 +12,6 @@ export default function Search() {
 
   return (
     <Layout>
-      <Header />
-      <DefaultCarousel />
       <main className="w-full my-12 px-5 xl:max-w-6xl xl:mx-auto xl:px-0">
         <h2 className="mb-5 text-xl capitalize font-medium">{title}</h2>
         <Cards
