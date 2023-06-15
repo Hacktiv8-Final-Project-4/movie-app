@@ -9,15 +9,17 @@ import App from "./app/App.jsx";
 import Search from "./pages/Search";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Favorites from "./pages/Favorites";
+import ErrorPage from "./pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <App />,
+    errorElement: <ErrorPage />
   },
   {
     path: ":searchParams",
-    element: <Search />
+    element: <Search />,
   },
   {
     path: "/favorites",
