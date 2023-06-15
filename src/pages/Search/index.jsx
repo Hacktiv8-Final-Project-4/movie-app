@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import Header from "../components/header";
+import Header from "../../components/Header";
 import { useParams } from "react-router-dom";
-import slicedParams from "../utils/slicedParams";
-import Cards from "../components/cards/Cards";
-import DefaultCarousel from "../components/carousel";
+import slicedParams from "../../utils/slicedParams";
+import Cards from "../../components/Cards";
+import DefaultCarousel from "../../components/Carousel";
 
 export default function Search() {
   const { searchParams } = useParams();

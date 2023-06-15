@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import Header from "../components/header";
-import Cards from "../components/cards/Cards";
-import EmptyDataMessages from "../components/messages/EmptyDataMessages";
-import DefaultCarousel from "../components/carousel";
+import Header from "../../components/Header";
+import Cards from "../../components/Cards";
+import EmptyDataMessages from "../../components/Messages";
+import DefaultCarousel from "../../components/Carousel";
 
 export default function Favorites() {
   const { favoriteMovies } = useSelector((state) => state.favorites)

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { searchMoviesByTitle } from "../features/searchSlice";
+import { searchMoviesByTitle } from "../../features/searchSlice";
 import { useDispatch } from "react-redux";
 
 const Header = () => {

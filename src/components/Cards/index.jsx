@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import CardItem from "./CardItem";
+import CardItem from "./cardItem";
 
 export default function Cards({ className, movies }) {
   // console.log(movies);

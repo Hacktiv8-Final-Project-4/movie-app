@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Header from "../components/header";
-import DefaultCarousel from "../components/carousel";
+import Header from "../components/Header";
+import DefaultCarousel from "../components/Carousel";
 
 const App = () => {
   return (
