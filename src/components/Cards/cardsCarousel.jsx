@@ -44,7 +44,7 @@ const CardsCarousel = ({ movies }) => {
             slidesPerView: 2,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
           1200: {
             slidesPerView: 5,
@@ -59,19 +59,19 @@ const CardsCarousel = ({ movies }) => {
       </Swiper>
       <Button
         onClick={slideToPrev}
-        className={`hidden w-12 h-12 border-2 border-slate-500 lg:block absolute -left-5 bg-white rounded-full shadow-md top-[calc(50%_-_60px)] rounded z-20 ${
+        className={`hidden w-10 h-10 border-2 border-slate-400 lg:block absolute -left-5 bg-white rounded-full shadow-md top-[calc(50%_-_60px)] rounded z-20 ${
           isBeginning ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
-        <i className="fa-solid fa-angle-left text-lg"></i>
+        <i className="fa-solid fa-angle-left text-slate-500 -mr-0.5"></i>
       </Button>
       <Button
         onClick={slideToNext}
-        className={`hidden w-12 h-12 bg-white border-2 border-slate-500 rounded-full lg:block absolute -right-5 top-[calc(50%_-_60px)] px-4 py-2 rounded z-20 ${
+        className={`hidden w-10 h-10 flex bg-white border-2 border-slate-400 rounded-full lg:block absolute -right-5 top-[calc(50%_-_60px)] px-4 py-2 rounded z-20 ${
           isEnd ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
-        <i className="fa-solid fa-angle-right text-lg"></i>
+        <i className="fa-solid fa-angle-right text-slate-500 -ml-0.5"></i>
       </Button>
     </div>
   );
