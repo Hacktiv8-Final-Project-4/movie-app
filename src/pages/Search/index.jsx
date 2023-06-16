@@ -3,12 +3,15 @@ import { useParams } from "react-router-dom";
 import slicedParams from "../../utils/slicedParams";
 import Cards from "../../components/Cards";
 import Layout from "../../components/Layout";
+import Loading from "../../components/Loading";
 
 export default function Search() {
   const { searchParams } = useParams();
   const title = slicedParams(searchParams, 7, searchParams.length);
   
   const search = useSelector((state) => state.search);
+
+  if (search.loading) return <Loading />;
 
   return (
     <Layout>

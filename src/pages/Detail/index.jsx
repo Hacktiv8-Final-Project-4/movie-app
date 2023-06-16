@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Ratings from "../../components/Ratings";
+import Loading from "../../components/Loading";
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ const Detail = () => {
   useEffect(() => {
     dispatch(getMovieDetails({ movieId }));
   }, [dispatch, movieId]);
+
+  if (movieDetails.loading) return <Loading />;
 
   return (
     <>
