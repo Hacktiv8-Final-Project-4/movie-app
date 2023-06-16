@@ -12,7 +12,7 @@ export default function Search() {
 
   return (
     <Layout>
-      <main className="w-full my-20 px-5 xl:max-w-6xl xl:mx-auto xl:px-0">
+      <main className="w-full my-20 px-5 xl:max-w-6xl xl:mx-auto xl:px-0 min-h-[200px]">
         <h2 className="mb-5 text-xl capitalize font-medium">{title}</h2>
         <Cards
           className="grid grid-cols justify-center sm:grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5" 
