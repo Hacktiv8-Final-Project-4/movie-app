@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../features/detailSlice";
 import { useDispatch, useSelector } from "react-redux";
-import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -33,9 +32,10 @@ const Detail = () => {
   return (
     <>
       <Header />
-      <main className="my-28 max-w-3xl mx-auto">
+      <main className="my-32 max-w-3xl mx-auto">
         <div className="flex gap-x-6">
           <img
+            className="min-h-[480px]"
             src={movieDetails.Poster}
             alt={movieDetails.Title}
           />

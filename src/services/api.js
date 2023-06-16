@@ -7,10 +7,10 @@ const searchMovies = (title) => {
   return axios.get(`${BASE_URL}?s=${title}&apikey=${API_KEY}`);
 }
 
-const getMovies = () => {
+const getMovies = ({ title }) => {
   const { BASE_URL, API_KEY } = CONFIG;
 
-  return axios.get(`${BASE_URL}?s=man&apikey=${API_KEY}`);
+  return axios.get(`${BASE_URL}?s=${title}&apikey=${API_KEY}`);
 };
 
 const getDetails = ({ movieId }) => {

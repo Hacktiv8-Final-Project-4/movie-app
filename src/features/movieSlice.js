@@ -4,11 +4,13 @@ import { getMovies } from "../services/api";
 
 export const fetchMovieList = createAsyncThunk(
   "movies/fetchMovie",
-  async () => {
+  async ({ title }) => {
     try {
-      const response = await getMovies();
-      // console.log(response.data.Search);
-      return response.data.Search;
+      const response = await getMovies({ title });
+      const movies = response.data.Search;
+
+      return {title, movies};
+
     } catch (error) {
       throw error;
     }
@@ -17,7 +19,7 @@ export const fetchMovieList = createAsyncThunk(
 
 const initialState = {
   isLoading: false,
-  movies: [],
+  movieList: {},
   isError: false,
 };
 
@@ -30,8 +32,10 @@ const movieSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchMovieList.fulfilled, (state, action) => {
+        const {title, movies} = action.payload;
+
         state.isLoading = false;
-        state.movies = action.payload;
+        state.movieList[title] = movies.filter((movie) => movie.Title = title);
       })
       .addCase(fetchMovieList.rejected, (state, action) => {
         state.isLoading = false;

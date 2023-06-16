@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { searchMoviesByTitle } from "../../features/searchSlice";
 import { useDispatch } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
   const [title, setTitle] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
@@ -39,7 +40,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className={`${scrolled ? "bg-gray-900 shadow-lg" : "bg-transparent"} border-gray-200 dark:bg-gray-900 fixed z-50 top-0 left-0 right-0`}>
+      <nav className={`${scrolled || location.pathname.includes("detail") ? "bg-gray-900 shadow-lg" : "bg-transparent"} border-gray-200 dark:bg-gray-900 fixed z-50 top-0 left-0 right-0`}>
         <div className="max-w-screen-xl xl:max-w-6xl flex items-center mx-auto p-5 xl:px-0 gap-x-10">
           <NavLink to="/" 
             className="w-max text-2xl font-semibold text-white flex items-center gap-x-3">

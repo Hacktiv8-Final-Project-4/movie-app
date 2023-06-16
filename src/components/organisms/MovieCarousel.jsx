@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovieList, fetchMovieList } from "../../features/movieSlice";
@@ -12,19 +13,10 @@ import Icon from "../atoms/Icon";
 import CardItem from "../Cards/cardItem";
 SwiperCore.use([Navigation]);
 
-const MovieCarousel = () => {
-  const dispatch = useDispatch();
-
-  const movies = useSelector(getMovieList);
+const MovieCarousel = ({ movies }) => {
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-
-  useEffect(() => {
-    dispatch(fetchMovieList());
-  }, [dispatch]);
-
-  console.log(movies);
 
   const slideToPrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -46,48 +38,46 @@ const MovieCarousel = () => {
   };
 
   return (
-    <div className="relative">
-      <div className="w-full">
-        <Swiper
-          ref={swiperRef}
-          spaceBetween={16}
-          slidesPerView={4}
-          navigation
-          onSlideChange={handleSlideChange}
-          breakpoints={{
-            320: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            1200: {
-              slidesPerView: 4,
-            },
-          }}
-        >
-          {movies?.map((movie, idx) => (
-            <SwiperSlide key={idx}>
-              {movie && <CardItem movie={movie} />}
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+    <div className="relative w-full">
+      <Swiper
+        ref={swiperRef}
+        spaceBetween={16}
+        slidesPerView={5}
+        navigation
+        onSlideChange={handleSlideChange}
+        breakpoints={{
+          320: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1200: {
+            slidesPerView: 5,
+          },
+        }}
+      >
+        {movies?.map((movie, idx) => (
+          <SwiperSlide key={idx}>
+            {movie && <CardItem movie={movie} />}
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <Button
         onClick={slideToPrev}
-        className={`hidden lg:block absolute -left-24 top-[calc(50%_-_60px)] px-4 py-2 rounded ${
+        className={`hidden w-12 h-12 border-2 border-slate-500 lg:block absolute -left-5 bg-white rounded-full shadow-md top-[calc(50%_-_60px)] rounded z-20 ${
           isBeginning ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
-        <Icon name="chevron-left" className="w-14 h-14" />
+        <i className="fa-solid fa-angle-left text-lg"></i>
       </Button>
       <Button
         onClick={slideToNext}
-        className={`hidden lg:block absolute -right-24 top-[calc(50%_-_60px)] px-4 py-2 rounded ${
+        className={`hidden w-12 h-12 bg-white border-2 border-slate-500 rounded-full lg:block absolute -right-5 top-[calc(50%_-_60px)] px-4 py-2 rounded z-20 ${
           isEnd ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
-        <Icon name="chevron-right" className="w-14 h-14" />
+        <i className="fa-solid fa-angle-right text-lg"></i>
       </Button>
     </div>
   );

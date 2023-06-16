@@ -1,12 +1,22 @@
+/* eslint-disable react/prop-types */
+import { useEffect } from "react";
+import { fetchMovieList } from "../../features/movieSlice";
 import MovieCarousel from "./MovieCarousel";
+import { useSelector, useDispatch } from "react-redux";
 
-const MovieList = () => {
+export default function MovieList({ title }) {
+  const dispatch = useDispatch();
+  const movies = useSelector((state) => state.movies);
+  
+  useEffect(() => {
+    dispatch(fetchMovieList({ title }));
+  }, [dispatch, title]);
+
   return (
-    <div className="container mx-auto py-5">
-      <h1 className="text-[36px] font-bold">Movie</h1>
-      <MovieCarousel />
+    <div className="w-full mb-10">
+      <h2 className="text-2xl mb-5 font-bold capitalize">{title}</h2>
+      <MovieCarousel movies={movies?.movieList[title]} />
     </div>
   );
-};
+}
 
-export default MovieList;

@@ -1,11 +1,14 @@
 import React from "react";
-import { MovieList } from "../components";
 import Layout from "../components/Layout";
+import MovieList from "../components/organisms/MovieList";
 
 const Home = () => {
   return (
     <Layout>
-      <MovieList />
+      <main className="max-w-6xl mx-auto py-20">
+        <MovieList title="avengers" />
+        <MovieList title="ant man" />
+      </main>
     </Layout>
   );
 };
