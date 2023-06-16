@@ -13,7 +13,7 @@ export default function MovieList({ title }) {
   }, [dispatch, title]);
 
   return (
-    <div className="w-full mb-10 mt-10">
+    <div className="w-full mb-10 mt-5">
       <h2 className="text-xl sm:text-2xl mb-5 font-bold capitalize">{title}</h2>
       <CardsCarousel movies={movies?.movieList[title]} />
     </div>
