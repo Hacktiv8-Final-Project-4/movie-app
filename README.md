@@ -1,6 +1,6 @@
-# Movie App
+# Movlix
 
-<p align="center">Movie App is a web application that allows users to search for their favorite movies and create a list of their preferred movies. This application provides a user-friendly interface and efficient functionalities to enhance the movie browsing experience.</p>
+<p align="center">Movlix is a web application that allows users to search for their favorite movies and create a list of their preferred movies. This application provides a user-friendly interface and efficient functionalities to enhance the movie browsing experience.</p>
 
 ## Features
 
