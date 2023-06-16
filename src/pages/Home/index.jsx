@@ -1,6 +1,5 @@
-import React from "react";
-import Layout from "../components/Layout";
-import MovieList from "../components/organisms/MovieList";
+import Layout from "../../components/Layout";
+import MovieList from "../../components/MovieList";
 
 const Home = () => {
   return (

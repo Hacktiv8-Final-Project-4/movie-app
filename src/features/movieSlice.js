@@ -37,7 +37,7 @@ const movieSlice = createSlice({
         state.isLoading = false;
         state.movieList[title] = movies.filter((movie) => movie.Title = title);
       })
-      .addCase(fetchMovieList.rejected, (state, action) => {
+      .addCase(fetchMovieList.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       });

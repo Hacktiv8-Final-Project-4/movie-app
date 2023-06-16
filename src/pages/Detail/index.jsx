@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getMovieDetails } from "../features/detailSlice";
+import { getMovieDetails } from "../../features/detailSlice";
 import { useDispatch, useSelector } from "react-redux";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const Detail = () => {
   return (
     <>
       <Header />
-      <main className="my-32 max-w-3xl mx-auto">
+      <main className="my-32 max-w-3xl mx-auto rounded-md">
         <div className="flex gap-x-6">
           <img
             className="min-h-[480px]"

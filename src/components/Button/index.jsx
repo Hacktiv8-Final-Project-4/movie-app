@@ -1,8 +1,7 @@
-import Icon from "./Icon";
-
+/* eslint-disable react/prop-types */
 const Button = ({ onClick, className, children }) => {
   return (
-    <button className={`${className}`} onClick={onClick}>
+    <button className={className} onClick={onClick}>
       {children}
     </button>
   );

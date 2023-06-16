@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 
-const DefaultCarousel = () => {
+const Hero = () => {
   useEffect(() => {
       const carousel = document.getElementById('default-carousel');
       const prevButton = document.querySelector('[data-carousel-prev]');
@@ -110,4 +110,4 @@ const DefaultCarousel = () => {
   );
 }
 
-export default DefaultCarousel;
+export default Hero;

@@ -1,19 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getMovieList, fetchMovieList } from "../../features/movieSlice";
-
-import Button from "../atoms/Button";
-import MovieCard from "../molecules/MovieCard";
-
+import { useRef, useState } from "react";
+import Button from "../Button";
 import { SwiperSlide, Swiper } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper/core";
 import "swiper/swiper.min.css";
-import Icon from "../atoms/Icon";
-import CardItem from "../Cards/cardItem";
+import CardItem from "./cardItem";
 SwiperCore.use([Navigation]);
 
-const MovieCarousel = ({ movies }) => {
+const CardsCarousel = ({ movies }) => {
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -83,4 +77,4 @@ const MovieCarousel = ({ movies }) => {
   );
 };
 
-export default MovieCarousel;
+export default CardsCarousel;
