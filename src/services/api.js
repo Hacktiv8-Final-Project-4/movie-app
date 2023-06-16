@@ -7,4 +7,10 @@ const searchMovies = (title) => {
   return axios.get(`${BASE_URL}?s=${title}&apikey=${API_KEY}`);
 }
 
-export { searchMovies };
+const getMovies = () => {
+  const { BASE_URL, API_KEY } = CONFIG;
+
+  return axios.get(`${BASE_URL}?s=man&apikey=${API_KEY}`);
+};
+
+export { searchMovies, getMovies };

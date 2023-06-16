@@ -47,7 +47,7 @@ export default function CardItem({ movie }) {
           alt={movie.Title}
         />
         <Link
-          to="" 
+          to={`/movie-detail/${movie.imdbID}`}
           className="absolute block top-0 right-0 bottom-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-[rgba(0,0,0,0.1)]">
         </Link>
       </div>

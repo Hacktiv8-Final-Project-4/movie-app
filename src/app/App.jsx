@@ -1,16 +1,7 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
-import DefaultCarousel from "../components/Carousel";
-import Layout from "../components/Layout";
 
 const App = () => {
-  return (
-    <Layout>
-      <main className="w-full my-20 px-5 xl:max-w-6xl xl:mx-auto xl:px-0 h-screen">
-        <h2 className="mb-5 text-xl capitalize font-medium">Home Page</h2>
-      </main>
-    </Layout>
-  );
+  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
 };
 
 export default App;

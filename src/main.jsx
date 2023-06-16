@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store, persistor } from "./app/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Home from "./pages/Home";
+import Detail from "./pages/Detail";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./app/App.jsx";
 import Search from "./pages/Search";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Favorites from "./pages/Favorites";
@@ -14,7 +15,7 @@ import ErrorPage from "./pages/Error";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
     errorElement: <ErrorPage />
   },
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/favorites",
     element: <Favorites />
+  },
+  {
+    path: "movie-detail/:imdbID",
+    element: <Detail />,
   },
 ])
 

@@ -4,10 +4,12 @@ import { combineReducers } from "redux";
 import { persistConfig } from "../config/persistConfig";
 import searchReducer from "../features/searchSlice";
 import favoritesReducer from "../features/favoritesSlice";
+import movieReducer from "../features/movieSlice";
 
 const rootReducer = combineReducers({
   search: searchReducer,
   favorites: favoritesReducer,
+  movies: movieReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
