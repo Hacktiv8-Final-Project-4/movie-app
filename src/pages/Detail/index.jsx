@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Ratings from "../../components/Ratings";
+import Loading from "../../components/Loading";
+import FavoritesButton from "../../components/Button/favoritesButton";
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -15,6 +17,8 @@ const Detail = () => {
   useEffect(() => {
     dispatch(getMovieDetails({ movieId }));
   }, [dispatch, movieId]);
+
+  if (movieDetails.loading) return <Loading />;
 
   return (
     <>
@@ -90,6 +94,10 @@ const Detail = () => {
           <p className="font-medium text-lg">Plot</p>
           <p className="text-slate-500">{movieDetails.Plot}</p>
         </div>
+        <FavoritesButton 
+          className="fixed right-5 bottom-5 bg-yellow-500 w-10 h-10 flex items-center justify-center rounded-full text-base pt-0.5 md:w-12 md:h-12 md:text-xl md:pt-0 md:right-10 md:bottom-10"
+          movie={movieDetails} 
+        />
       </main>
       <Footer />
     </>

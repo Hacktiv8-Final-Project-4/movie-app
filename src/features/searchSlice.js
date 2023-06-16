@@ -1,10 +1,10 @@
 /* eslint-disable no-useless-catch */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { searchMovies } from "../services/api";
+import { getMovies } from "../services/api";
 
-const searchMoviesByTitle = createAsyncThunk("movies/search", async (title) => {
+const searchMoviesByTitle = createAsyncThunk("movies/search", async ({ title }) => {
   try {
-    const response = await searchMovies(title);
+    const response = await getMovies({ title });
 
     if (response.data.Response === "False") {
       throw(response.data.Error);
