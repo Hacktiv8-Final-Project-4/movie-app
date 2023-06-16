@@ -17,7 +17,7 @@ const Header = () => {
   useEffect(() => {
     const timeOut = setTimeout(() => {
       if(title.length) {
-        dispatch(searchMoviesByTitle(title));
+        dispatch(searchMoviesByTitle({ title }));
         navigate(`/search=${title}`, {replace: true});
       }
     }, 500);
