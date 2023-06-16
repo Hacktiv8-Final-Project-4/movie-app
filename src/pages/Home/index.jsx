@@ -4,9 +4,9 @@ import MovieList from "../../components/MovieList";
 const Home = () => {
   return (
     <Layout>
-      <main className="max-w-6xl mx-auto py-20">
+      <main className="max-w-6xl mx-auto py-20 px-5">
         <MovieList title="avengers" />
-        <MovieList title="ant man" />
+        <MovieList title="transformers" />
       </main>
     </Layout>
   );

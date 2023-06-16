@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { addToFavorites, removeFromFavorites } from "../../features/favoritesSlice";
 import findMovie from "../../utils/findMovie";
 
 export default function CardItem({ movie }) {
+  const location = useLocation();
   const dispatch = useDispatch();
   const { favoriteMovies } = useSelector((state) => state.favorites);
 
@@ -42,7 +43,7 @@ export default function CardItem({ movie }) {
     <div className="relative">
       <div className="relative">
         <img
-          className="h-[350px] w-full object-cover xl:h-[280px]"
+          className={`${location.pathname === "/" ? "h-[200px]" : "h-[350px]"} w-full object-cover xl:h-[280px]`}
           src={movie.Poster}
           alt={movie.Title}
         />

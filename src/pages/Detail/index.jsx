@@ -4,6 +4,7 @@ import { getMovieDetails } from "../../features/detailSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Ratings from "../../components/Ratings";
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -15,31 +16,17 @@ const Detail = () => {
     dispatch(getMovieDetails({ movieId }));
   }, [dispatch, movieId]);
 
-  let rates = [];
-
-  for(let i = 1; i <= 5; i++) {
-    if (i > Math.round(movieDetails.imdbRating / 2)) {
-      rates.push(
-        <i className="fa-regular fa-star text-yellow-500 text-sm"></i>
-      );
-    } else {
-      rates.push(
-        <i className="fa-solid fa-star text-yellow-500 text-sm"></i>
-      );
-    }
-  }
-
   return (
     <>
       <Header />
       <main className="my-32 max-w-3xl mx-auto rounded-md">
-        <div className="flex gap-x-6">
+        <div className="flex gap-x-10 flex-col px-5 sm:flex-row">
           <img
-            className="min-h-[480px]"
+            className="min-h-[450px]"
             src={movieDetails.Poster}
             alt={movieDetails.Title}
           />
-          <table>
+          <table className="mt-5 sm:mt-0">
             <thead>
               <tr>
                 <th colSpan="2">
@@ -55,20 +42,18 @@ const Detail = () => {
                 <td>{movieDetails.Genre}</td>
               </tr>
               <tr className="text-slate-600">
+                <td>Type:</td>
+                <td>{movieDetails.Type}</td>
+              </tr>
+              <tr className="text-slate-600">
                 <td>Release:</td>
                 <td>{movieDetails.Released}</td>
               </tr>
               <tr className="text-slate-600">
-                <td>Rate:</td>
-                <td>{rates}</td>
-              </tr>
-              <tr className="text-slate-600">
-                <td>Director:</td>
-                <td>{movieDetails.Director}</td>
-              </tr>
-              <tr className="text-slate-600">
-                <td>Writer:</td>
-                <td>{movieDetails.Writer}</td>
+                <td>Ratings:</td>
+                <td>
+                  <Ratings ratings={movieDetails.imdbRating} />
+                </td>
               </tr>
               <tr className="text-slate-600">
                 <td>Language:</td>
@@ -79,13 +64,29 @@ const Detail = () => {
                 <td>{movieDetails.Country}</td>
               </tr>
               <tr className="text-slate-600">
+                <td>Director:</td>
+                <td>{movieDetails.Director}</td>
+              </tr>
+              <tr className="text-slate-600">
+                <td>Writer:</td>
+                <td>{movieDetails.Writer}</td>
+              </tr>
+              <tr className="text-slate-600">
+                <td>Actors:</td>
+                <td>{movieDetails.Actors}</td>
+              </tr>
+              <tr className="text-slate-600">
+                <td>Awards:</td>
+                <td>{movieDetails.Awards}</td>
+              </tr>
+              <tr className="text-slate-600">
                 <td>Runtime:</td>
                 <td>{movieDetails.Runtime}</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div className="mt-10 w-11/12">
+        <div className="mt-10 w-11/12 px-5">
           <p className="font-medium text-lg">Plot</p>
           <p className="text-slate-500">{movieDetails.Plot}</p>
         </div>
