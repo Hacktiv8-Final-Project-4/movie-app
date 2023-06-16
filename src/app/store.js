@@ -5,11 +5,13 @@ import { persistConfig } from "../config/persistConfig";
 import searchReducer from "../features/searchSlice";
 import favoritesReducer from "../features/favoritesSlice";
 import movieReducer from "../features/movieSlice";
+import detailReducer from "../features/detailSlice";
 
 const rootReducer = combineReducers({
   search: searchReducer,
   favorites: favoritesReducer,
   movies: movieReducer,
+  detail: detailReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

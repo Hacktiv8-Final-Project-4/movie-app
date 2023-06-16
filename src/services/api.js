@@ -13,4 +13,10 @@ const getMovies = () => {
   return axios.get(`${BASE_URL}?s=man&apikey=${API_KEY}`);
 };
 
-export { searchMovies, getMovies };
+const getDetails = ({ movieId }) => {
+  const { BASE_URL, API_KEY } = CONFIG;
+
+  return axios.get(`${BASE_URL}?i=${movieId}&apikey=${API_KEY}`);
+}
+
+export { searchMovies, getMovies, getDetails };
