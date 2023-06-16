@@ -19,7 +19,10 @@ export const fetchMovieList = createAsyncThunk(
 
 const initialState = {
   isLoading: false,
-  movieList: {},
+  movieList: {
+    avengers: [],
+    transformers: [],
+  },
   isError: false,
 };
 
@@ -35,7 +38,12 @@ const movieSlice = createSlice({
         const {title, movies} = action.payload;
 
         state.isLoading = false;
-        state.movieList[title] = movies.filter((movie) => movie.Title = title);
+        
+        movies.forEach((movie) => {
+          if (movie.Title.toLowerCase().includes(title)) {
+            state.movieList[title].push(movie);
+          }
+        })
       })
       .addCase(fetchMovieList.rejected, (state) => {
         state.isLoading = false;
